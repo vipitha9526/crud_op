@@ -1,0 +1,32 @@
+
+<div class="container p-4">
+    <div class="row p-5">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">NAME</th>
+                <th scope="col">CLASS</th>
+                <th scope="col">ROLLNO</th>
+                <th scope="col">EVENT</th>
+                <th scope="col">ACTION</th>
+              </tr>
+            </thead>
+            <tbody>
+               <% for (var i = 0; i < result.length; i++) { %>
+              <tr>
+                <th scope="row"><%= i+1 %></th>
+                <td><%= result[i].name %></td>
+                <td><%= result[i].class%></td>
+                <td><%= result[i].rollNo %></td>
+                <td><%= result[i].event %></td>
+                <td><a href="/delete/?id=<%= result[i]._id %>&event=<%= result[i].event %>"><i class="fas fa-trash-alt text-danger"></i></a>
+                  <a href="/update/<%= result[i]._id %>"><i class="fa fa-pencil text-info" aria-hidden="true"></i></a>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+    </div>
+  </div>
+  
